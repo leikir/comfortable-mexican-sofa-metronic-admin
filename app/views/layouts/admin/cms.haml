@@ -1,0 +1,13 @@
+!!!
+/[if IE 8]
+  :preserve
+    <html class="ie8" lang="#{I18n.locale}">
+/[if IE 9]
+  :preserve
+    <html class="ie9" lang="#{I18n.locale}">
+<!--[if !IE]><!-->
+%html{:lang => I18n.locale}<>
+  <!--<![endif]-->
+
+  = render :partial => 'layouts/admin/cms/head'
+  = render :partial => 'layouts/admin/cms/body'

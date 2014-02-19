@@ -1,0 +1,17 @@
+%body#comfy{:class => "c-#{params[:controller].slugify} a-#{params[:action].slugify} page-header-fixed"}
+
+  = render :partial => 'layouts/admin/cms/header'
+
+  = render 'admin/cms/partials/body_before'
+
+  .page-container
+
+    .page-sidebar-wrapper
+      .page-sidebar.navbar-collapse.collapse
+        = render :partial => 'layouts/admin/cms/left'
+
+    .page-content-wrapper
+      .page-content
+        = render :partial => 'layouts/admin/cms/center'
+
+  = render :partial => 'layouts/admin/cms/footer_js'

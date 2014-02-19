@@ -1,0 +1,41 @@
+= render '/admin/cms/partials/navigation_before'
+
+%ul.page-sidebar-menu
+
+  %li.sidebar-toggler-wrapper
+    .sidebar-toggler.hidden-phone
+
+  / class 'start' will be missing ?
+  = active_link_to admin_cms_sites_path, :active => :exclusive, :wrap_tag => :li do
+    %i.fa.fa-globe
+    %span.title= t('admin.cms.base.sites')
+    - if is_active_link?(admin_cms_sites_path, :exclusive)
+      %span.selected
+
+  - if @site && !@site.new_record?
+    = active_link_to admin_cms_site_layouts_path(@site), :wrap_tag => :li do
+      %i.fa.fa-columns
+      %span.title= t('admin.cms.base.layouts')
+      - if is_active_link?(admin_cms_site_layouts_path(@site))
+        %span.selected
+    = active_link_to admin_cms_site_pages_path(@site), :wrap_tag => :li do
+      %i.fa.fa-sitemap
+      %span.title= t('admin.cms.base.pages')
+      - if is_active_link?(admin_cms_site_pages_path(@site))
+        %span.selected
+    = active_link_to admin_cms_site_snippets_path(@site), :wrap_tag => :li do
+      %i.fa.fa-puzzle-piece
+      %span.title= t('admin.cms.base.snippets')
+      - if is_active_link?(admin_cms_site_snippets_path(@site))
+        %span.selected
+    = active_link_to admin_cms_site_files_path(@site), :wrap_tag => :li do
+      %i.fa.fa-paperclip
+      %span.title= t('admin.cms.base.files')
+      - if is_active_link?(admin_cms_site_files_path(@site))
+        %span.selected
+
+  = cms_hook :navigation
+
+  = render '/admin/cms/partials/navigation_inner'
+
+= render '/admin/cms/partials/navigation_after'
