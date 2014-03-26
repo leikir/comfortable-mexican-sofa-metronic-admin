@@ -1,0 +1,31 @@
+.page-header
+  = link_to t('.new_link'), new_admin_cms_site_path, :class => 'btn pull-right'
+  %h2= t('.title')
+
+= render 'admin/cms/partials/sites_before'
+
+%table.table.table-hover.table-bordered#list-sites
+  - @sites.each do |site|
+    %tr
+      %td
+        = image_tag('/assets/comfortable_mexican_sofa/icon_site.gif')
+      %td.main
+        .item-title
+          = link_to site.label, admin_cms_site_pages_path(site)
+        .item-meta
+          .identifier
+            = site.identifier
+            = "(#{site.locale})"
+          .host
+            - host = "http://#{site.hostname}:3000/#{site.path}"
+            = link_to host, host, :target => '_blank'
+
+        .btn-group
+          = link_to admin_cms_site_pages_path(site), :class => 'btn btn-small green' do
+            %span.fa.fa-check
+          = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow' do
+            %span.fa.fa-edit
+          = link_to admin_cms_site_path(site), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small red' do
+            %span.fa.fa-trash-o
+
+= render 'admin/cms/partials/sites_after'
