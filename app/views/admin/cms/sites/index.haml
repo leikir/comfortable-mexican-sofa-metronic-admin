@@ -12,11 +12,11 @@
         .icon
 
         .btn-group
-          = link_to admin_cms_site_pages_path(site), :class => 'btn btn-small blue' do
+          = link_to admin_cms_site_pages_path(site), :class => 'btn btn-small blue', title: t(".select"), data: {tooltip: "", placement: "top", container: "body" } do
             %span.fa.fa-check
-          = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow' do
+          = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow', title: t(".edit"), data: {tooltip: "", placement: "top", container: "body" } do
             %span.fa.fa-pencil
-          = link_to admin_cms_site_path(site), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small red' do
+          = link_to admin_cms_site_path(site), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small red', title: t(".delete"), data: {tooltip: "", placement: "top", container: "body" } do
             %span.fa.fa-trash-o
 
         .item-content

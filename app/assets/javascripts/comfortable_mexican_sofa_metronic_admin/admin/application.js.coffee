@@ -1,5 +1,6 @@
 
 # BEGIN CORE PLUGINS
+#= require other/underscore-min
 #= require bootstrap/bootstrap.min
 #= require bootstrap/bootstrap-hover-dropdown.min
 #= require jquery/jquery.slimscroll.min
@@ -19,11 +20,11 @@
 # END PAGE LEVEL PLUGINS
 
 # BEGIN PAGE LEVEL SCRIPTS
+#= require ./shared/tips
 #= require metronic/core/app
 #= require metronic/custom/index
 #= require metronic/custom/tasks
 # END PAGE LEVEL SCRIPTS
-
 
 
 $ ->
