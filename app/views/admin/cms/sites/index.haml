@@ -25,7 +25,7 @@
             %span.fa.fa-check
           = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow' do
             %span.fa.fa-edit
-          = link_to admin_cms_site_path(site), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small red' do
+          = link_to admin_cms_site_path(site), method: :delete, data: {confirm: t('.are_you_sure')}, :class => 'btn btn-small red' do
             %span.fa.fa-trash-o
 
 = render 'admin/cms/partials/sites_after'

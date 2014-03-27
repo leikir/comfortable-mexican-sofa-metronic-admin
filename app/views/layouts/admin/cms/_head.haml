@@ -6,11 +6,16 @@
   %meta{'http-equiv' => "X-UA-Compatible", :content => "IE=edge"}
   %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
 
-  / = stylesheet_link_tag 'comfortable_mexican_sofa/application'
+  /[if lt IE 9]
+    = javascript_include_tag  "/plugins/respond.min.js"
+    = javascript_include_tag  "/plugins/excanvas.min.js"
+
+
+  = stylesheet_link_tag 'comfortable_mexican_sofa/application'
   = stylesheet_link_tag 'comfortable_mexican_sofa/admin/application'
   = stylesheet_link_tag 'comfortable_mexican_sofa_metronic_admin/application'
-  / = javascript_include_tag 'comfortable_mexican_sofa/application'
-  = javascript_include_tag 'comfortable_mexican_sofa/admin/application'
+  -# = javascript_include_tag 'comfortable_mexican_sofa/application'
+  -# = javascript_include_tag 'comfortable_mexican_sofa/admin/application'
 
   = render :partial => 'layouts/admin/cms/temp_head'
 
