@@ -1,61 +1,12 @@
 @import "config"
 
-#header-sites
-  .btn
-    &:hover
-      background-color: $blue
-      color: #fff
-
-#list-sites
-  tr
-    td:first-child
-      text-align: center
-      vertical-align: middle
-      width: 28px
-
-      img
-        max-width: none
-
-    td:nth-child(2)
-      vertical-align: middle
-      position: relative
-      width: 100%
-      padding-right: 129px
-
-      .item-title, .item-meta
-        display: inline-block
-
-      .item-title
-        width: 30%
-
-      .item-meta
-        width: 69%
-
-        .identifier, .host
-          display: inline-block
-
-        .host
-          float: right
-
-
-
-
-      .btn-group
-        position: absolute
-        top: 0
-        right: 0
-
-        a.btn
-          background-color: $default
-          line-height: 30px
-
-          &:hover
-            background-color: inherit
-            // position: absolute
-            // top: 0
-            // left: 0
-            // right: 0
-            // bottom: 0
+body#comfy.c-admin-cms-sites
+  .page-content
+    ul.list
+      li
+        .item
+          .item-content
+            margin-left: 35px
 
 
 

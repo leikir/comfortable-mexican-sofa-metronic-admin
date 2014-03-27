@@ -4,28 +4,53 @@
 
 = render 'admin/cms/partials/sites_before'
 
-%table.table.table-hover.table-bordered#list-sites
+
+%ul.list.sortable
   - @sites.each do |site|
-    %tr
-      %td
-        = image_tag('/assets/comfortable_mexican_sofa/icon_site.gif')
-      %td.main
-        .item-title
-          = link_to site.label, admin_cms_site_pages_path(site)
-        .item-meta
-          .identifier
+    %li{:id => dom_id(site)}
+      .item
+        .icon
+
+        .btn-group
+          = link_to admin_cms_site_pages_path(site), :class => 'btn btn-small blue' do
+            %span.fa.fa-check
+          = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow' do
+            %span.fa.fa-pencil
+          = link_to admin_cms_site_path(site), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small red' do
+            %span.fa.fa-trash-o
+
+        .item-content
+          .item-title
+            = link_to site.label, admin_cms_site_pages_path(site)
+          .item-meta
             = site.identifier
-            = "(#{site.locale})"
-          .host
+            = "(#{site.locale}) :"
+
             - host = "http://#{site.hostname}:3000/#{site.path}"
             = link_to host, host, :target => '_blank'
 
-        .btn-group
-          = link_to admin_cms_site_pages_path(site), :class => 'btn btn-small green' do
-            %span.fa.fa-check
-          = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow' do
-            %span.fa.fa-edit
-          = link_to admin_cms_site_path(site), method: :delete, data: {confirm: t('.are_you_sure')}, :class => 'btn btn-small red' do
-            %span.fa.fa-trash-o
+-# %table.table.table-hover.table-bordered#list-sites
+-#   - @sites.each do |site|
+-#     %tr
+-#       %td
+-#         = image_tag('/assets/comfortable_mexican_sofa/icon_site.gif')
+-#       %td.main
+-#         .item-title
+-#           = link_to site.label, admin_cms_site_pages_path(site)
+-#         .item-meta
+-#           .identifier
+-#             = site.identifier
+-#             = "(#{site.locale})"
+-#           .host
+-#             - host = "http://#{site.hostname}:3000/#{site.path}"
+-#             = link_to host, host, :target => '_blank'
+
+-#         .btn-group
+-#           = link_to admin_cms_site_pages_path(site), :class => 'btn btn-small green' do
+-#             %span.fa.fa-check
+-#           = link_to edit_admin_cms_site_path(site), :class => 'btn btn-small yellow' do
+-#             %span.fa.fa-edit
+-#           = link_to admin_cms_site_path(site), method: :delete, data: {confirm: t('.are_you_sure')}, :class => 'btn btn-small red' do
+-#             %span.fa.fa-trash-o
 
 = render 'admin/cms/partials/sites_after'
