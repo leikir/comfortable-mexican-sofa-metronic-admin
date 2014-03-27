@@ -1,0 +1,13 @@
+.header.navbar.navbar-fixed-top
+  .header-inner
+    = link_to admin_cms_sites_path(), class: "navbar-brand" do
+      = image_tag 'metronic/logo.png', alt: "logo", class: "img-responsive"
+
+  %a.navbar-toggle{href: "#", data: {toggle: "collapse", target: ".navbar-collapse"} }
+    = image_tag 'metronic/menu-toggler.png'
+
+  %ul.nav.navbar-nav.pull-right
+    %li
+      = link_to "#" do
+        %span.fa.fa-power-off
+        Log Out

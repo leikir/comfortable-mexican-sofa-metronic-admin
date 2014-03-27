@@ -1,0 +1,52 @@
+@import "config"
+body#comfy
+  color: $color
+
+  a:hover
+    text-decoration: none
+
+  span.checked
+    color: $blue
+
+  .page-header
+    .btn
+      &:hover
+        background-color: $blue
+        color: #fff
+
+  ul.list
+
+    li
+      .item
+        .icon
+          margin-top: 2px
+
+        .item-content
+          .item-title
+            a
+              color: $color
+              font-weight: bold
+              &:hover
+                color: $blue
+
+          .item-meta
+            color: $color
+            font-size: inherit
+
+
+      .btn-group
+        // position: absolute
+        // top: 0
+        // right: 0
+        // bottom: 0
+
+        a.btn
+          background-color: $default
+          // height: 100%
+
+          &:hover
+            background-color: inherit
+
+          span.fa
+            // display: inline-block
+            // vertical-align: middle
