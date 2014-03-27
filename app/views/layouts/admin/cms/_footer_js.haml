@@ -1,7 +1,9 @@
 = render 'admin/cms/partials/html_footer'
 
-= render :partial => 'layouts/admin/cms/temp_footer'
--# = javascript_include_tag 'comfortable_mexican_sofa_metronic_admin/admin/application'
+-# = render :partial => 'layouts/admin/cms/temp_footer'
+= javascript_include_tag 'comfortable_mexican_sofa/application'
+= javascript_include_tag 'comfortable_mexican_sofa/admin/application'
+= javascript_include_tag 'comfortable_mexican_sofa_metronic_admin/admin/application'
 
 - if content_for(:javascript)
   :javascript
