@@ -11,9 +11,9 @@
     .btn-group
       = link_to new_admin_cms_site_layout_path(@site, :parent_id => layout.id), :class => 'btn btn-small blue', title: t(".add_child_layout"), data: {tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-plus
-      = link_to edit_admin_cms_site_layout_path(@site, layout), :class => 'btn btn-small yellow', title: t(".edit"), data: {tooltip: "", placement: "top", container: "body" } do
+      = link_to edit_admin_cms_site_layout_path(@site, layout), :class => 'btn btn-small yellow', title: t(".edit"), data: { tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-pencil
-      = link_to admin_cms_site_layout_path(@site, layout), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small red', title: t(".delete"), data: {tooltip: "", placement: "top", container: "body" } do
+      = link_to admin_cms_site_layout_path(@site, layout), :method => :delete, :class => 'btn btn-small red', title: t(".delete"), data: { confirm: t('.are_you_sure'), tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-trash-o
 
     .item-content

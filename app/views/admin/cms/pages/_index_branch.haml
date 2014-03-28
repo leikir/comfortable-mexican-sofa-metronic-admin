@@ -25,7 +25,7 @@
       = link_to edit_admin_cms_site_page_path(@site, page), :class => 'btn btn-small yellow', title: t(".edit"), data: {tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-pencil
         -# = t('.edit')
-      = link_to admin_cms_site_page_path(@site, page), :method => :delete, :data => {:confirm => t('.are_you_sure')}, :class => 'btn btn-small btn-danger red', title: t(".delete"), data: {tooltip: "", placement: "top", container: "body" } do
+      = link_to admin_cms_site_page_path(@site, page), :method => :delete, :class => 'btn btn-small btn-danger red', title: t(".delete"), data: { confirm: t('.are_you_sure'), tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-trash-o
         -# = t('.delete')
 
