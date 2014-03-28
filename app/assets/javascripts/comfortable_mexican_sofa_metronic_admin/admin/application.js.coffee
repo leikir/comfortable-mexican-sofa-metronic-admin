@@ -3,6 +3,7 @@
 #= require other/underscore-min
 #= require bootstrap/bootstrap.min
 #= require bootstrap/bootstrap-hover-dropdown.min
+#= require bootstrap/bootstrap-wysihtml5-custom
 #= require jquery/jquery.slimscroll.min
 #= require jquery/jquery.blockui.min
 #= require jquery/jquery.cokie.min
