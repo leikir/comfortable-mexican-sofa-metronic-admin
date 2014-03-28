@@ -11,12 +11,7 @@
 
 # BEGIN PAGE LEVEL PLUGINS
 #= require jquery/jquery.pulsate.min
-#* require bootstrap/bootstrap-daterangepicker/moment.min
-#* require bootstrap/bootstrap-daterangepicker/daterangepicker
-#= require jquery/jquery.gritter.min
-#* require jquery/jquery.easy-pie-chart
-#* require jquery/jquery.sparkline.min
-#* require fullcalendar.min
+#* require jquery/jquery.gritter.min
 # END PAGE LEVEL PLUGINS
 
 # BEGIN PAGE LEVEL SCRIPTS

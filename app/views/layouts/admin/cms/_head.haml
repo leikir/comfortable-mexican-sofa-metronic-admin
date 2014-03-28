@@ -10,14 +10,11 @@
     = javascript_include_tag  "ohter/respond.min.js"
     = javascript_include_tag  "ohter/excanvas.min.js"
 
-
+  = stylesheet_link_tag '//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all'
   = stylesheet_link_tag 'comfortable_mexican_sofa/application'
-  -# = stylesheet_link_tag 'comfortable_mexican_sofa/admin/application'
   = stylesheet_link_tag 'comfortable_mexican_sofa_metronic_admin/application'
-  -# = javascript_include_tag 'comfortable_mexican_sofa/application'
-  -# = javascript_include_tag 'comfortable_mexican_sofa/admin/application'
-
-  = render :partial => 'layouts/admin/cms/temp_head'
+  = stylesheet_link_tag 'metronic/print', media: 'print'
+  -# = stylesheet_link_tag 'comfortable_mexican_sofa/admin/application'
 
   = yield :head
 
