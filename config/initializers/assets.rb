@@ -16,4 +16,6 @@ Rails.application.config.assets.precompile << 'metronic/*.png'
 Rails.application.config.assets.precompile << 'metronic/*.gif'
 Rails.application.config.assets.precompile << 'metronic/*.jpg'
 
+Rails.application.config.assets.precompile << 'metronic/print.css'
+
 
