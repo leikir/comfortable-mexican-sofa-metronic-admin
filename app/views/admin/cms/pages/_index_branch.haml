@@ -8,9 +8,10 @@
 
 %li{:id => dom_id(page)}
   .item
-    .toggle{:class => branch_open ? 'open' : nil}
+    .toggle.open
       - if !category_view && has_children && !page.root?
-        = link_to toggle_branch_admin_cms_site_page_path(@site, page), :remote => true do
+        -# = link_to toggle_branch_admin_cms_site_page_path(@site, page), :remote => true do
+        %a{:href => "#"}
           %span= t('.toggle')
 
     .icon{:class => page.is_published?? 'published' : 'draft'}
@@ -36,6 +37,5 @@
       .item-meta
         = link_to page.url, page.url, :target => '_blank'
 
-  - if !category_view && has_children && branch_open
-    %ul.children.sortable
-      = render :partial => 'index_branch', :collection => children
+  %ul.children.sortable
+    = render :partial => 'index_branch', :collection => children
