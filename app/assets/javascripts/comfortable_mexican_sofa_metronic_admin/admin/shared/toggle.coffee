@@ -1,4 +1,4 @@
-$('.c-admin-cms-pages #cms_page_9 > .item > .toggle a').on 'click', (e)->
+$('.c-admin-cms-pages [id*="cms_page_"] > .item > .toggle a').on 'click', (e)->
   e.preventDefault()
 
   $toggle = $(e.target).closest('.toggle')
