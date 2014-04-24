@@ -1,0 +1,31 @@
+.page-header
+  = link_to t('.new_link'), new_admin_cms_site_file_path(@site), :class => 'btn pull-right'
+  %h2= t('.title')
+
+= render 'admin/cms/partials/files_before'
+
+= render :partial => 'admin/cms/categories/index', :object => 'Comfy::Cms::File'
+
+
+%ul.list.sortable
+  - @files.each do |file|
+    %li{:id => dom_id(file)}
+      .item
+        .icon
+
+        .btn-group
+          = link_to edit_admin_cms_site_file_path(@site, file), :class => 'btn btn-small yellow', title: t(".edit"), data: {tooltip: "", placement: "top", container: "body" } do
+            %span.fa.fa-pencil
+            -# = t('.edit')
+          = link_to admin_cms_site_file_path(@site, file), :method => :delete, :class => 'btn btn-small btn-danger red', title: t(".delete"), data: { confirm: t('.are_you_sure'), tooltip: "", placement: "top", container: "body" } do
+            %span.fa.fa-trash-o
+            -# = t('.delete')
+
+        .item-content
+          .item-title
+            = link_to file.label, edit_admin_cms_site_file_path(@site, file), :class => 'item-label'
+            = render :partial => 'admin/cms/categories/categories', :object => file
+          .item-meta
+            = link_to file.file_file_name, file.file.url, :target => '_blank'
+
+= render 'admin/cms/partials/files_after'
