@@ -1,0 +1,14 @@
+.page-header
+  = link_to t('.revision', :count => @page.revisions.count), admin_cms_site_page_revisions_path(@site, @page), :class => 'btn pull-right'
+  %h2= t('.title')
+
+.page-contain
+  - content_for :right_column do
+    = render 'admin/cms/sites/mirrors', :object => @page
+
+  = comfy_form_for @page, :as => :page, :url => {:action => :update}, :html => {:multipart => true, :class => "col-md-9 col-sm-8 col-xs-12 formatted"} do |form|
+    = render form
+
+  .right-column.col-md-3.col-sm-4.col-xs-12
+    .right-column-content
+      = render :partial => 'layouts/admin/cms/right'
