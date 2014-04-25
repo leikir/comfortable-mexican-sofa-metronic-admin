@@ -7,7 +7,7 @@
 
 = render 'admin/cms/partials/snippets_before'
 
-= render :partial => 'admin/cms/categories/index', :object => 'Comfy::Cms::Snippet'
+= render :partial => 'admin/cms/categories/index', :object => 'Cms::Snippet'
 
 %ul.list.sortable
   - @snippets.each do |snippet|
