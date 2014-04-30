@@ -18,6 +18,7 @@
 # BEGIN PAGE LEVEL SCRIPTS
 #= require ./shared/tips
 #= require ./shared/toggle
+#= require ./shared/pages
 #= require metronic/core/app
 #= require metronic/custom/index
 #= require metronic/custom/tasks
