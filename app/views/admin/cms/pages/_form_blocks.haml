@@ -8,8 +8,8 @@
 #form-blocks{ class: "#{ 'hide' if @page.target_page_id.present? }" }
   - if tags.empty?
     .no-tags
-      = link_to cms_object.layout.label, edit_admin_cms_site_layout_path(@site, cms_object.layout)
-      = t('.no_tags').html_safe
+      -# = link_to cms_object.layout.label, edit_admin_cms_site_layout_path(@site, cms_object.layout)
+      -# = t('.no_tags').html_safe
 
   - else
     = fields_for :blocks, nil, :builder => ComfortableMexicanSofa::FormBuilder do |cms_blocks|
