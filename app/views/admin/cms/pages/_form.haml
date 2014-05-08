@@ -1,9 +1,6 @@
 - content_for :right_column do
-  -# #form-save.box
-  -#   %label.checkbox.inline
-  -#     %input{:type => 'checkbox'}
-  -#     = ::Cms::Page.human_attribute_name(:is_published)
-  -#   %button.btn.btn-small.btn-primary.pull-right
+  .page-checkbox
+    = form.check_box :is_published, :label => t('.is_published')
   = render 'admin/cms/files/index'
 
 = render 'admin/cms/partials/page_form_before', :object => form
@@ -31,7 +28,6 @@
 
 = render :partial => 'form_blocks'
 
-= form.check_box :is_published, :label => t('.is_published')
 
 = render 'admin/cms/partials/page_form_after', :object => form
 
