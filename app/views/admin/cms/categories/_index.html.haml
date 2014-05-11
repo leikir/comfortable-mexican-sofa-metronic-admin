@@ -10,6 +10,7 @@
   .categories.read
     .category.all{:class => params[:category].blank?? 'active' : nil}
       = link_to t('.all'), :category => nil
+
     - @site.categories.of_type(type).each do |category|
       = render :partial => 'admin/cms/categories/show', :object => category, :locals => { :read => true }
 

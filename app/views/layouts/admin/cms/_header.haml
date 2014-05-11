@@ -6,8 +6,21 @@
   %a.navbar-toggle{href: "#", data: {toggle: "collapse", target: ".navbar-collapse"} }
     = image_tag 'metronic/menu-toggler.png'
 
-  -# %ul.nav.navbar-nav.pull-right
-  -#   %li
-  -#     = link_to "#" do
-  -#       %span.fa.fa-power-off
-  -#       Log Out
+  %ul.nav.navbar-nav.pull-right
+    %li.dropdown
+      %a.dropdown-toggle{:href => "#", data: {toggle:"dropdown", hover:"dropdown"} }
+        - if I18n.locale.to_s == "fr"
+          %span.flag.flag-fr
+        - else
+          %span.flag.flag-gb
+        %span.locale= I18n.locale.to_s
+        %i.fa.fa-angle-down
+      %ul.dropdown-menu
+        %li
+          = link_to url_for(params.dup.merge({locale: 'fr'})) do
+            %span.flag.flag-fr
+            FR
+        %li
+          = link_to url_for(params.dup.merge({locale: 'en'})) do
+            %span.flag.flag-gb
+            EN

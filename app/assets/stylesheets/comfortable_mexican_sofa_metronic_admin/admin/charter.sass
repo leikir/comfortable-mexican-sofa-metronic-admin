@@ -52,19 +52,31 @@ body#comfy
             font-size: inherit
 
 
-      .btn-group
-        // position: absolute
-        // top: 0
-        // right: 0
-        // bottom: 0
+  .btn-group
+    // position: absolute
+    // top: 0
+    // right: 0
+    // bottom: 0
 
-        a.btn
-          background-color: $default
-          // height: 100%
+    a.btn
+      background-color: $default
+      color: $color
+      // height: 100%
 
-          &:hover
-            background-color: inherit
+      &:hover
+        background-color: inherit
+        color: #FFF
 
-          span.fa
-            // display: inline-block
-            // vertical-align: middle
+      span.fa
+        // display: inline-block
+        // vertical-align: middle
+
+  .page-content
+    .categories-widget
+      line-height: 25px
+
+      .btn
+        padding-top: 2px
+        padding-bottom: 2px
+        background-color: $default
+        color: $color

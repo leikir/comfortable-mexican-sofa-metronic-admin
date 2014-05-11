@@ -17,6 +17,8 @@
 
 # BEGIN PAGE LEVEL SCRIPTS
 #= require ./shared/tips
+#= require ./shared/toggle
+#= require ./shared/pages
 #= require metronic/core/app
 #= require metronic/custom/index
 #= require metronic/custom/tasks
@@ -27,6 +29,7 @@ $ ->
 
    App.init() # initlayout and core plugins
    Index.init()
+   # CMS.init()
    # Index.initJQVMAP() # init index page's custom scripts
    # Index.initCalendar() # init index page's custom scripts
    # Index.initCharts() # init index page's custom scripts

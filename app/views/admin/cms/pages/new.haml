@@ -1,0 +1,10 @@
+.page-header
+  %h2= t('.title')
+
+.page-contain.has-aside
+  = comfy_form_for @page, :as => :page, :url => {:action => :create}, :html => {:multipart => true, :class => "col-md-9 col-sm-8 col-xs-12 formatted"} do |form|
+    = render form
+
+  .right-column.col-md-3.col-sm-4.col-xs-12
+    .right-column-content
+      = render :partial => 'layouts/admin/cms/right'
