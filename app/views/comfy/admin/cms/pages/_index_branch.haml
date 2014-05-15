@@ -20,20 +20,20 @@
           %span &#8645;
 
     .btn-group
-      = link_to new_admin_cms_site_page_path(@site, :parent_id => page.id), :class => 'btn btn-small blue', title: t(".add_child_page"), data: {tooltip: "", placement: "top", container: "body" } do
+      = link_to new_comfy_admin_cms_site_page_path(@site, :parent_id => page.id), :class => 'btn btn-small blue', title: t(".add_child_page"), data: {tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-plus
         -# = t('.add_child_page')
-      = link_to edit_admin_cms_site_page_path(@site, page), :class => 'btn btn-small yellow', title: t(".edit"), data: {tooltip: "", placement: "top", container: "body" } do
+      = link_to edit_comfy_admin_cms_site_page_path(@site, page), :class => 'btn btn-small yellow', title: t(".edit"), data: {tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-pencil
         -# = t('.edit')
-      = link_to admin_cms_site_page_path(@site, page), :method => :delete, :class => 'btn btn-small btn-danger red', title: t(".delete"), data: { confirm: t('.are_you_sure'), tooltip: "", placement: "top", container: "body" } do
+      = link_to comfy_admin_cms_site_page_path(@site, page), :method => :delete, :class => 'btn btn-small btn-danger red', title: t(".delete"), data: { confirm: t('.are_you_sure'), tooltip: "", placement: "top", container: "body" } do
         %span.fa.fa-trash-o
         -# = t('.delete')
 
     .item-content
       .item-title
-        = link_to page.label, edit_admin_cms_site_page_path(@site, page), :class => 'item-label'
-        = render :partial => 'admin/cms/categories/categories', :object => page
+        = link_to page.label, edit_comfy_admin_cms_site_page_path(@site, page), :class => 'item-label'
+        = render :partial => 'comfy/admin/cms/categories/categories', :object => page
       .item-meta
         = link_to page.url, page.url, :target => '_blank'
 
