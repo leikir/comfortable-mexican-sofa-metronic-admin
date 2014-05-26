@@ -1,6 +1,6 @@
 .header.navbar.navbar-fixed-top
   .header-inner
-    = link_to admin_cms_sites_path(), class: "navbar-brand" do
+    = link_to comfy_admin_cms_sites_path(), class: "navbar-brand" do
       = image_tag 'metronic/logo.png', alt: "logo", class: "img-responsive"
 
   %a.navbar-toggle{href: "#", data: {toggle: "collapse", target: ".navbar-collapse"} }
@@ -16,11 +16,8 @@
         %span.locale= I18n.locale.to_s
         %i.fa.fa-angle-down
       %ul.dropdown-menu
-        %li
-          = link_to url_for(params.dup.merge({locale: 'fr'})) do
-            %span.flag.flag-fr
-            FR
-        %li
-          = link_to url_for(params.dup.merge({locale: 'en'})) do
-            %span.flag.flag-gb
-            EN
+        - I18n.available_locales.each do |locale|
+          %li
+            = link_to url_for(params.dup.merge({locale: locale})) do
+              %span.flag{ class: "flag-#{locale}"}
+              = locale.upcase
