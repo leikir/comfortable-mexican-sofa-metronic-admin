@@ -1,0 +1,13 @@
+- flash.each do |type, message|
+  - bg_class = case type.to_sym
+    - when :notice then :info
+    - when :error then :danger
+    - when :alert then :warning
+    - else type
+
+  .alert{:class => "bg-#{bg_class}"}
+    %button.close{:type => 'button', :class => "close", :data => {:dismiss => 'alert'}} &times;
+    = message
+
+.center-column-content
+  = yield
